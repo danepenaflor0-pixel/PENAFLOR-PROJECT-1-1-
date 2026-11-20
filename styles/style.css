@@ -1,0 +1,366 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+:root {
+  --bg: #08111f;
+  --panel: #101e31;
+  --panel-light: #14253b;
+  --text: #edf5ff;
+  --muted: #a7b6c9;
+  --accent: #42d9e8;
+  --accent-dark: #1ca9bc;
+  --line: rgba(170, 202, 230, 0.14);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.7;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.container {
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+}
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(8, 17, 31, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.logo {
+  font:
+    700 1.8rem "Space Grotesk",
+    sans-serif;
+  letter-spacing: -2px;
+}
+.logo span,
+.hero h1 span,
+.section-title span {
+  color: var(--accent);
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+.nav-links a {
+  color: var(--muted);
+  font-size: 0.92rem;
+  transition: color 0.2s;
+}
+.nav-links a:hover,
+.footer a:hover {
+  color: var(--accent);
+}
+.hero {
+  min-height: 630px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 50px;
+  padding-top: 70px;
+  padding-bottom: 80px;
+}
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 13px;
+}
+.hero h1 {
+  font:
+    700 clamp(3.2rem, 7vw, 5.6rem)/1.05 "Space Grotesk",
+    sans-serif;
+  letter-spacing: -4px;
+}
+.hero h2 {
+  color: #c5d5e8;
+  font:
+    600 clamp(1.3rem, 3vw, 1.8rem) "Space Grotesk",
+    sans-serif;
+  margin-top: 16px;
+}
+.intro {
+  color: var(--muted);
+  max-width: 540px;
+  margin: 20px 0 30px;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+.button:hover {
+  transform: translateY(-3px);
+}
+.primary {
+  color: #06131d;
+  background: var(--accent);
+}
+.primary:hover {
+  background: #78edf4;
+}
+.secondary {
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+.secondary:hover {
+  background: var(--panel);
+}
+.hero-art {
+  min-height: 380px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.profile-frame {
+  width: min(300px, 75vw);
+  aspect-ratio: 1;
+  padding: 12px;
+  border: 1px solid rgba(66, 217, 232, 0.55);
+  border-radius: 32px;
+  background: linear-gradient(145deg, #18364b, #101b2b);
+  transform: rotate(3deg);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+.profile-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 23px;
+}
+.orbit {
+  position: absolute;
+  border: 1px solid rgba(66, 217, 232, 0.2);
+  border-radius: 50%;
+}
+.orbit-one {
+  width: 390px;
+  height: 390px;
+}
+.orbit-two {
+  width: 450px;
+  height: 450px;
+  border-style: dashed;
+}
+.floating-tag {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 48px;
+  padding: 10px 16px;
+  background: var(--panel-light);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.section {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+.section-title {
+  font:
+    700 clamp(2rem, 4vw, 3rem) "Space Grotesk",
+    sans-serif;
+  letter-spacing: -1.5px;
+  margin-bottom: 28px;
+}
+.about-card,
+.contact-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  padding: 30px;
+  color: var(--muted);
+}
+.about-card p + p {
+  margin-top: 15px;
+}
+.skill-grid,
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.skill-card,
+.project-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 23px;
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
+}
+.skill-card:hover,
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(66, 217, 232, 0.5);
+}
+.skill-icon {
+  color: var(--accent);
+  font:
+    700 1.6rem "Space Grotesk",
+    sans-serif;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+.skill-card h3,
+.project-card h3 {
+  font:
+    600 1.1rem "Space Grotesk",
+    sans-serif;
+  margin-bottom: 8px;
+}
+.skill-card p,
+.project-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.project-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+.project-number {
+  color: var(--accent);
+  font:
+    700 1.7rem "Space Grotesk",
+    sans-serif;
+  margin-bottom: 20px;
+}
+.project-type {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+.contact-section {
+  text-align: center;
+}
+.contact-card {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.contact-card .button {
+  margin-top: 22px;
+}
+.email {
+  margin-top: 12px;
+  font-size: 0.88rem;
+  color: var(--accent);
+}
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 25px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.footer a {
+  color: var(--accent);
+}
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 20px;
+    padding-top: 65px;
+  }
+  .intro {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-art {
+    min-height: 400px;
+  }
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .nav {
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px 0;
+    gap: 10px;
+  }
+  .nav-links {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+  .orbit-one {
+    width: 310px;
+    height: 310px;
+  }
+  .orbit-two {
+    width: 350px;
+    height: 350px;
+  }
+  .skill-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .section {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+  .about-card,
+  .contact-card {
+    padding: 22px;
+  }
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
